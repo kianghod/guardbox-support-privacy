@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SquareCircle – GuardBox Support & Privacy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title .icon {
+            font-size: 1.2em;
+        }
+        
+        .feedback-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #e67e22;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            margin: 15px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+        
+        .faq-question {
+            background: #3498db;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #2980b9;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            color: #555;
+        }
+        
+        .faq-answer ul, .faq-answer ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .privacy-highlight {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .privacy-highlight strong {
+            color: #2c3e50;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature-item .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .feature-item p {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>SquareCircle – GuardBox</h1>
+            <div class="subtitle">Feedback & Support Form</div>
+            <div class="version-badge">Version 3.11.7</div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">📞</span>
+                Support & Help
+            </h2>
+            
+            <div class="feedback-box">
+                <h3>💬 We Value Your Feedback!</h3>
+                <p>Please use this form to share your comments, report issues, or request new features for our applications.</p>
+                <a href="https://forms.gle/nDuFdgRYFqyWVBpx7" target="_blank" class="cta-button">
+                    📝 SquareCircle Feedback & Support Form
+                </a>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📧 Email Support</h4>
+                    <a href="mailto:support@guardbox.app">support@guardbox.app</a>
+                    <p>Response within 24-48 hours</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>🌐 Support Page</h4>
+                    <a href="https://kianghod.github.io/guardbox-support-privacy/" target="_blank">
+                        Visit Support Page
+                    </a>
+                    <p>Complete documentation & FAQ</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>📱 In-App Support</h4>
+                    <p>Settings > Support</p>
+                    <p>Access help directly in the app</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">❓</span>
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">🔐 How do I reset my passcode?</div>
+                <div class="faq-answer">
+                    <ol>
+                        <li>Open GuardBox</li>
+                        <li>Go to Settings > Security</li>
+                        <li>Tap "Reset Passcode"</li>
+                        <li>Follow the verification process</li>
+                        <li>Set a new 6-digit passcode</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">📝 How do I create a new story?</div>
+                <div class="faq-answer">
+                    <ol>
+                        <li>Tap the "+" button on the Stories tab</li>
+                        <li>Choose "New Story"</li>
+                        <li>Enter a title</li>
+                        <li>Use the rich text editor to write your content</li>
+                        <li>Tap "Save" - your story auto-saves as you type</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">📸 How do I add photos to my stories?</div>
+                <div class="faq-answer">
+                    <ol>
+                        <li>Open a story in edit mode</li>
+                        <li>Tap the camera icon in the toolbar</li>
+                        <li>Choose "Camera" to take a new photo or "Photo Library" to select existing</li>
+                        <li>The photo will be embedded in your story</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔄 How do I export my data?</div>
+                <div class="faq-answer">
+                    <p>Currently, GuardBox stores data locally for maximum privacy. To backup:</p>
+                    <ol>
+                        <li>Use iOS backup features (iCloud/iTunes)</li>
+                        <li>Your GuardBox data will be included in device backups</li>
+                        <li>For individual stories, you can copy text manually</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">✨</span>
+                Key Features
+            </h2>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">🔒</div>
+                    <h4>Secure Storage</h4>
+                    <p>All data stored locally on your device</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">📝</div>
+                    <h4>Rich Text Editor</h4>
+                    <p>Create beautiful stories with formatting</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">📸</div>
+                    <h4>Photo Support</h4>
+                    <p>Add photos to your stories</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">🎨</div>
+                    <h4>Dark/Light Theme</h4>
+                    <p>Choose your preferred appearance</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">🔐</div>
+                    <h4>Passcode Protection</h4>
+                    <p>Keep your notes secure</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">📱</div>
+                    <h4>Biometric Auth</h4>
+                    <p>Face ID & Touch ID support</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Section -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🔒</span>
+                Privacy Policy
+            </h2>
+            
+            <div class="privacy-highlight">
+                <strong>Last updated:</strong> January 15, 2025
+            </div>
+
+            <h3>1. Information We Collect</h3>
+            <p>GuardBox is designed with privacy in mind. We collect minimal information to provide our secure note-taking service:</p>
+            
+            <h4>1.1 User Content</h4>
+            <ul>
+                <li><strong>Notes and Stories:</strong> All your notes, stories, and content are stored locally on your device using SharedPreferences</li>
+                <li><strong>Images:</strong> Photos you add to your notes are stored locally on your device</li>
+                <li><strong>Settings:</strong> App preferences like theme, font size, and passcode are stored locally</li>
+            </ul>
+            
+            <h4>1.2 Device Permissions</h4>
+            <ul>
+                <li><strong>Camera:</strong> Used only when you choose to add photos to your notes</li>
+                <li><strong>Photo Library:</strong> Used only when you choose to select existing photos for your notes</li>
+                <li><strong>Microphone:</strong> Used only for text-to-speech functionality when you activate it</li>
+            </ul>
+            
+            <div class="privacy-highlight">
+                <strong>Important:</strong> We do not collect, transmit, or store any of your personal data on our servers. All your content remains on your device.
+            </div>
+
+            <h3>2. How We Use Your Information</h3>
+            <p>Since we don't collect personal data, we don't use it for any purpose. Your data is used only locally on your device for:</p>
+            <ul>
+                <li>Displaying your notes and stories</li>
+                <li>Applying your chosen settings and preferences</li>
+                <li>Providing text-to-speech functionality</li>
+                <li>Managing your passcode and security settings</li>
+            </ul>
+
+            <h3>3. Data Sharing</h3>
+            <p><strong>We do not share any of your data with third parties.</strong> Since all your data is stored locally on your device, we have no access to it and cannot share it.</p>
+
+            <h3>4. Data Security</h3>
+            <p>Your data security is our top priority:</p>
+            <ul>
+                <li>All data is stored locally on your device using iOS secure storage</li>
+                <li>Passcode protection ensures only you can access your notes</li>
+                <li>Decoy mode provides additional security layers</li>
+                <li>No data is transmitted over the internet</li>
+            </ul>
+
+            <h3>5. Data Retention and Deletion</h3>
+            <p>Since your data is stored locally on your device:</p>
+            <ul>
+                <li>Data persists until you delete it through the app</li>
+                <li>You can delete individual stories or all stories at any time</li>
+                <li>Uninstalling the app will remove all local data</li>
+                <li>We have no control over or access to your data</li>
+            </ul>
+
+            <h3>6. Third-Party Services</h3>
+            <p>GuardBox uses the following third-party services for core functionality:</p>
+            <ul>
+                <li><strong>Flutter TTS:</strong> For text-to-speech functionality (data processed locally)</li>
+                <li><strong>Image Picker:</strong> For camera and photo library access (data processed locally)</li>
+                <li><strong>SharedPreferences:</strong> For local data storage (data stored locally only)</li>
+            </ul>
+            <p>None of these services transmit your data to external servers.</p>
+
+            <h3>7. Children's Privacy</h3>
+            <p>GuardBox is not specifically designed for children under 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+
+            <h3>8. Changes to This Policy</h3>
+            <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy in the app and updating the "Last updated" date.</p>
+
+            <h3>9. Feedback</h3>
+            <p>We value your feedback! Please use this form to share your comments, report issues, or request new features for our applications.</p>
+            <ul>
+                <li><strong>Feedback Form:</strong> <a href="https://forms.gle/nDuFdgRYFqyWVBpx7" target="_blank" style="color: #3498db; text-decoration: none; font-weight: 600;">SquareCircle – Feedback & Support Form</a></li>
+                <li><strong>Email:</strong> support@guardbox.app</li>
+            </ul>
+
+            <h3>10. Your Rights</h3>
+            <p>Since all your data is stored locally on your device, you have complete control over it:</p>
+            <ul>
+                <li>Access your data through the app</li>
+                <li>Modify or delete any content at any time</li>
+                <li>Export your data by copying from the app</li>
+                <li>Delete all data by uninstalling the app</li>
+            </ul>
+
+            <div class="privacy-highlight">
+                <strong>Summary:</strong> GuardBox is a privacy-first app that keeps all your data on your device. We don't collect, transmit, or store any personal information. Your notes are yours alone.
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Thank you for choosing SquareCircle – GuardBox</p>
+            <p>© 2025 SquareCircle. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html> 
