@@ -17,8 +17,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #111;
+            background: #fff;
             min-height: 100vh;
         }
         
@@ -30,49 +30,49 @@
         
         .header {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
+            background: #fff;
             padding: 40px 20px;
-            border-radius: 20px;
+            border-radius: 0;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e5e5e5;
         }
         
         .header h1 {
             font-size: 2.5em;
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 10px;
             font-weight: 700;
         }
         
         .header .subtitle {
             font-size: 1.2em;
-            color: #7f8c8d;
+            color: #666;
             margin-bottom: 20px;
         }
         
         .version-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
+            background: #000;
+            color: #fff;
             padding: 8px 16px;
-            border-radius: 20px;
+            border-radius: 0;
             font-size: 0.9em;
             font-weight: 600;
         }
         
         .content-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
+            background: #fff;
+            border-radius: 0;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e5e5;
         }
 
         /* Apple-style link list */
         .link-list {
             background: #fff;
-            border-radius: 14px;
-            border: 1px solid #e9ecef;
+            border-radius: 0;
+            border: 1px solid #e5e5e5;
             overflow: hidden;
         }
         .link-row {
@@ -81,28 +81,30 @@
             gap: 12px;
             padding: 14px 16px;
             text-decoration: none;
+            color: inherit;
             border-bottom: 1px solid #f0f0f0;
         }
         .link-row:last-child { border-bottom: 0; }
         .link-icon {
             width: 32px; height: 32px;
-            border-radius: 50%;
+            border-radius: 0;
             display: grid; place-items: center;
-            background: rgba(52, 152, 219, 0.12);
-            color: #2980b9;
+            background: transparent;
+            color: #000;
+            border: 1px solid #e5e5e5;
             font-size: 18px;
         }
         .link-main { flex: 1; }
-        .link-title { color: #2c3e50; font-weight: 600; }
-        .link-sub { color: #7f8c8d; font-size: 0.92em; margin-top: 2px; }
-        .link-chevron { color: rgba(0,0,0,0.35); font-size: 14px; }
+        .link-title { color: #000; font-weight: 600; }
+        .link-sub { color: #666; font-size: 0.92em; margin-top: 2px; }
+        .link-chevron { color: #777; font-size: 14px; }
         
         .section-title {
             font-size: 1.8em;
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 1px solid #e5e5e5;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -113,11 +115,12 @@
         }
         
         .feedback-box {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            border-radius: 15px;
+            background: #f9f9f9;
+            border-radius: 0;
             padding: 25px;
             margin: 20px 0;
-            border-left: 5px solid #e67e22;
+            border: 1px solid #e5e5e5;
+            border-left: 4px solid #000;
         }
         
         .contact-grid {
@@ -128,57 +131,58 @@
         }
         
         .contact-card {
-            background: #f8f9fa;
+            background: #fafafa;
             padding: 20px;
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
-            transition: transform 0.3s ease;
+            border-radius: 0;
+            border: 1px solid #e5e5e5;
+            border-left: 4px solid #000;
+            transition: background 0.2s ease;
         }
         
         .contact-card:hover {
-            transform: translateY(-5px);
+            background: #f3f3f3;
         }
         
         .contact-card h4 {
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 10px;
             font-size: 1.1em;
         }
         
         .contact-card a {
-            color: #3498db;
-            text-decoration: none;
+            color: #000;
+            text-decoration: underline;
             font-weight: 600;
         }
         
         .contact-card a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
         
         .faq-item {
-            background: #f8f9fa;
+            background: #fff;
             margin: 15px 0;
-            border-radius: 15px;
+            border-radius: 0;
             overflow: hidden;
-            border: 1px solid #e9ecef;
+            border: 1px solid #e5e5e5;
         }
         
         .faq-question {
-            background: #3498db;
-            color: white;
+            background: #000;
+            color: #fff;
             padding: 15px 20px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.2s ease;
         }
         
         .faq-question:hover {
-            background: #2980b9;
+            background: #111;
         }
         
         .faq-answer {
             padding: 20px;
-            color: #555;
+            color: #333;
         }
         
         .faq-answer ul, .faq-answer ol {
@@ -187,15 +191,16 @@
         }
         
         .privacy-highlight {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-radius: 15px;
+            background: #f9f9f9;
+            border-radius: 0;
             padding: 25px;
             margin: 20px 0;
-            border-left: 5px solid #27ae60;
+            border: 1px solid #e5e5e5;
+            border-left: 4px solid #000;
         }
         
         .privacy-highlight strong {
-            color: #2c3e50;
+            color: #000;
         }
         
         .feature-grid {
@@ -206,11 +211,11 @@
         }
         
         .feature-item {
-            background: #f8f9fa;
+            background: #fafafa;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 0;
             text-align: center;
-            border: 1px solid #e9ecef;
+            border: 1px solid #e5e5e5;
         }
         
         .feature-item .icon {
@@ -219,36 +224,35 @@
         }
         
         .feature-item h4 {
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 5px;
         }
         
         .feature-item p {
-            color: #7f8c8d;
+            color: #666;
             font-size: 0.9em;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
+            background: #000;
+            color: #fff;
             padding: 15px 30px;
-            border-radius: 25px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
             margin: 10px 5px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: background 0.2s ease;
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            background: #111;
         }
         
         .footer {
             text-align: center;
             padding: 30px;
-            color: rgba(255, 255, 255, 0.8);
+            color: #777;
         }
         
         @media (max-width: 768px) {
