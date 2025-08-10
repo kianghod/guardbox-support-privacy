@@ -64,6 +64,35 @@
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
+        /* Apple-style link list */
+        .link-list {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #e9ecef;
+            overflow: hidden;
+        }
+        .link-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .link-row:last-child { border-bottom: 0; }
+        .link-icon {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: grid; place-items: center;
+            background: rgba(52, 152, 219, 0.12);
+            color: #2980b9;
+            font-size: 18px;
+        }
+        .link-main { flex: 1; }
+        .link-title { color: #2c3e50; font-weight: 600; }
+        .link-sub { color: #7f8c8d; font-size: 0.92em; margin-top: 2px; }
+        .link-chevron { color: rgba(0,0,0,0.35); font-size: 14px; }
         
         .section-title {
             font-size: 1.8em;
@@ -262,26 +291,39 @@
                 </a>
             </div>
 
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h4>📧 Email Support</h4>
-                    <a href="mailto:support@guardbox.app">support@guardbox.app</a>
-                    <p>Response within 24-48 hours</p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>🌐 Support Page</h4>
-                    <a href="https://kianghod.github.io/guardbox-support-privacy/" target="_blank">
-                        Visit Support Page
-                    </a>
-                    <p>Complete documentation & FAQ</p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>📱 In-App Support</h4>
-                    <p>Settings > Support</p>
-                    <p>Access help directly in the app</p>
-                </div>
+            <div class="link-list" role="list">
+                <a class="link-row" role="listitem" href="https://kianghod.github.io/guardbox-support-privacy/" target="_blank" rel="noopener">
+                    <div class="link-icon">🛟</div>
+                    <div class="link-main">
+                        <div class="link-title">Support</div>
+                        <div class="link-sub">Get help and contact us</div>
+                    </div>
+                    <div class="link-chevron">›</div>
+                </a>
+                <a class="link-row" role="listitem" href="#privacy">
+                    <div class="link-icon">🔒</div>
+                    <div class="link-main">
+                        <div class="link-title">Privacy Policy</div>
+                        <div class="link-sub">How we protect your data</div>
+                    </div>
+                    <div class="link-chevron">›</div>
+                </a>
+                <a class="link-row" role="listitem" href="https://forms.gle/nDuFdgRYFqyWVBpx7" target="_blank" rel="noopener">
+                    <div class="link-icon">📝</div>
+                    <div class="link-main">
+                        <div class="link-title">Feedback Form</div>
+                        <div class="link-sub">Share comments or request features</div>
+                    </div>
+                    <div class="link-chevron">›</div>
+                </a>
+                <a class="link-row" role="listitem" href="mailto:support@guardbox.app">
+                    <div class="link-icon">✉️</div>
+                    <div class="link-main">
+                        <div class="link-title">Email Support</div>
+                        <div class="link-sub">support@guardbox.app · 24–48h response</div>
+                    </div>
+                    <div class="link-chevron">›</div>
+                </a>
             </div>
         </div>
 
@@ -391,7 +433,7 @@
 
         <!-- Privacy Policy Section -->
         <div class="content-section">
-            <h2 class="section-title">
+            <h2 id="privacy" class="section-title">
                 <span class="icon">🔒</span>
                 Privacy Policy
             </h2>
