@@ -64,36 +64,29 @@
             background: #fff;
             border-radius: 0;
             padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid #e5e5e5;
+            margin-bottom: 24px;
+            border: none;
+            border-bottom: 1px solid #eee;
         }
 
         /* Apple-style link list */
         .link-list {
             background: #fff;
             border-radius: 0;
-            border: 1px solid #e5e5e5;
+            border: none;
             overflow: hidden;
         }
         .link-row {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 16px;
+            padding: 12px 0;
             text-decoration: none;
             color: inherit;
             border-bottom: 1px solid #f0f0f0;
         }
         .link-row:last-child { border-bottom: 0; }
-        .link-icon {
-            width: 32px; height: 32px;
-            border-radius: 0;
-            display: grid; place-items: center;
-            background: transparent;
-            color: #000;
-            border: 1px solid #e5e5e5;
-            font-size: 18px;
-        }
+        .link-icon { display: none; }
         .link-main { flex: 1; }
         .link-title { color: #000; font-weight: 600; }
         .link-sub { color: #666; font-size: 0.92em; margin-top: 2px; }
@@ -115,12 +108,11 @@
         }
         
         .feedback-box {
-            background: #f9f9f9;
+            background: #fafafa;
             border-radius: 0;
-            padding: 25px;
-            margin: 20px 0;
-            border: 1px solid #e5e5e5;
-            border-left: 4px solid #000;
+            padding: 20px;
+            margin: 16px 0;
+            border: 1px solid #eee;
         }
         
         .contact-grid {
@@ -131,11 +123,10 @@
         }
         
         .contact-card {
-            background: #fafafa;
-            padding: 20px;
+            background: #fff;
+            padding: 16px;
             border-radius: 0;
-            border: 1px solid #e5e5e5;
-            border-left: 4px solid #000;
+            border: 1px solid #eee;
             transition: background 0.2s ease;
         }
         
@@ -191,12 +182,11 @@
         }
         
         .privacy-highlight {
-            background: #f9f9f9;
+            background: #fafafa;
             border-radius: 0;
-            padding: 25px;
-            margin: 20px 0;
-            border: 1px solid #e5e5e5;
-            border-left: 4px solid #000;
+            padding: 20px;
+            margin: 16px 0;
+            border: 1px solid #eee;
         }
         
         .privacy-highlight strong {
@@ -237,11 +227,11 @@
             display: inline-block;
             background: #000;
             color: #fff;
-            padding: 15px 30px;
+            padding: 12px 18px;
             border-radius: 0;
             text-decoration: none;
             font-weight: 600;
-            margin: 10px 5px;
+            margin: 8px 0;
             transition: background 0.2s ease;
         }
         
@@ -299,11 +289,10 @@
             </div>
 
             <div class="link-list" role="list">
-                <a class="link-row" role="listitem" href="https://kianghod.github.io/guardbox-support-privacy/" target="_blank" rel="noopener">
-                    <div class="link-icon">🛟</div>
+                <a class="link-row" role="listitem" href="https://forms.gle/nDuFdgRYFqyWVBpx7" target="_blank" rel="noopener">
                     <div class="link-main">
                         <div class="link-title">Support</div>
-                        <div class="link-sub">Get help and contact us</div>
+                        <div class="link-sub">Submit the form to contact us</div>
                     </div>
                     <div class="link-chevron">›</div>
                 </a>
@@ -323,14 +312,7 @@
                     </div>
                     <div class="link-chevron">›</div>
                 </a>
-                <a class="link-row" role="listitem" href="mailto:support@guardbox.app">
-                    <div class="link-icon">✉️</div>
-                    <div class="link-main">
-                        <div class="link-title">Email Support</div>
-                        <div class="link-sub">support@guardbox.app · 24–48h response</div>
-                    </div>
-                    <div class="link-chevron">›</div>
-                </a>
+                
             </div>
         </div>
 
@@ -518,8 +500,7 @@
             <h3>9. Feedback</h3>
             <p>We value your feedback! Please use this form to share your comments, report issues, or request new features for our applications.</p>
             <ul>
-                <li><strong>Feedback Form:</strong> <a href="https://forms.gle/nDuFdgRYFqyWVBpx7" target="_blank" style="color: #3498db; text-decoration: none; font-weight: 600;">SquareCircle – Feedback & Support Form</a></li>
-                <li><strong>Email:</strong> support@guardbox.app</li>
+                        <li><strong>Feedback Form:</strong> <a href="https://forms.gle/nDuFdgRYFqyWVBpx7" target="_blank" style="color: #000; text-decoration: underline; font-weight: 600;">SquareCircle – Feedback & Support Form</a></li>
             </ul>
 
             <h3>10. Your Rights</h3>
